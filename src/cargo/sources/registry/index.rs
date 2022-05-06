@@ -439,7 +439,7 @@ impl<'cfg> RegistryIndex<'cfg> {
             // Next filter out all yanked packages. Some yanked packages may
             // leak throguh if they're in a whitelist (aka if they were
             // previously in `Cargo.lock`
-            .filter(|s| !s.yanked || yanked_whitelist.contains(&s.summary.package_id()))
+            //.filter(|s| !s.yanked || yanked_whitelist.contains(&s.summary.package_id()))
             .map(|s| s.summary.clone());
 
         // Handle `cargo update --precise` here. If specified, our own source
